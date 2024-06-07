@@ -1,0 +1,36 @@
+html{
+    background-image:url("https://c1.wallpaperflare.com/preview/318/794/466/drums-set-people-man.jpg");
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    line-height: 40px;
+}
+.button{
+    background: rgba(0,0,0,0.6);
+    font-size: 2.5em;
+    border:solid 3px #3c3c3c00;
+    color:#FFFFFF;
+    text-align: center;
+    width: 9%;
+    padding-top: 0.9rem;
+    border-radius: 10px;
+
+}
+.parts{
+    font-size: 1rem;
+    font-family:ubuntu,sans-serif;
+    color:#daa520;
+}
+#container{
+    display:flex;
+    justify-content: space-evenly;
+    margin: 18% auto;
+}
+.clik{
+    transform: scale(1.10,1.10);
+    border:solid 3px #daa520;
+}
+.button:hover{
+    cursor: pointer;
+}
