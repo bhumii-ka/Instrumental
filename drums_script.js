@@ -8,10 +8,68 @@ var snare;
 var crashCym;
 var hihat;
 function mDown(obj){
+    let text = obj.innerHTML[0];
     obj.classList.add("clik");
+    if(text=='A'){
+        floorTom=document.getElementById('floor-tom');
+        floorTom.play();
+    }
+    if(text=='S'){
+        RideCym=document.getElementById('ride-cymbal');
+        RideCym.play();
+    }
+    if(text=='D'){
+        MidTom=document.getElementById("mid-tom");
+        MidTom.play();
+    }
+    if(text=='F'){
+        base=document.getElementById('base');
+        base.play();
+    }
+    if(text=='G'){
+        highTom=document.getElementById('high-tom');
+        highTom.play();
+    }
+    if(text=='H'){
+        snare=document.getElementById('snare');
+        snare.play();
+    }
+    if(text=='J'){
+        crashCym=document.getElementById('crash');
+        crashCym.play();
+    }
+    if(text=='K'){
+        hihat=document.getElementById('hi-hat');
+        hihat.play();
+    }
 }
 function mUp(obj){
+    let text = obj.innerHTML[0];
     obj.classList.remove("clik");
+    if(text=='A'){
+        floorTom.load();
+    }
+    if(text=='S'){
+        RideCym.load();
+    }
+    if(text=='D'){
+        MidTom.load();
+    }
+    if(text=='F'){
+        base.load();
+    }
+    if(text=='G'){
+        highTom.load();
+    }
+    if(text=='H'){
+        snare.load();
+    }
+    if(text=='J'){
+        crashCym.load();
+    }
+    if(text=='K'){
+        hihat.load();
+    }
 }
 function kDown(e){
     let key= e.key;

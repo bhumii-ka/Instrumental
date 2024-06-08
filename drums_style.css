@@ -24,9 +24,13 @@ html{
 }
 #container{
     display:flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width:100%;
     justify-content: space-evenly;
-    margin: 18% auto;
-}
+}    
 .clik{
     transform: scale(1.10,1.10);
     border:solid 3px #daa520;
