@@ -1,156 +1,51 @@
 var allKeys= document.getElementsByClassName("button");
-var floorTom;
-var RideCym;
-var MidTom;
-var base;
-var highTom;
-var snare;
-var crashCym;
-var hihat;
+var aadio=document.getElementsByTagName("audio");
+var letters='ASDFGHJK';
+var smallLetters='asdfghjk';
+
 function mDown(obj){
     let text = obj.innerHTML[0];
     obj.classList.add("clik");
-    if(text=='A'){
-        floorTom=document.getElementById('floor-tom');
-        floorTom.play();
-    }
-    if(text=='S'){
-        RideCym=document.getElementById('ride-cymbal');
-        RideCym.play();
-    }
-    if(text=='D'){
-        MidTom=document.getElementById("mid-tom");
-        MidTom.play();
-    }
-    if(text=='F'){
-        base=document.getElementById('base');
-        base.play();
-    }
-    if(text=='G'){
-        highTom=document.getElementById('high-tom');
-        highTom.play();
-    }
-    if(text=='H'){
-        snare=document.getElementById('snare');
-        snare.play();
-    }
-    if(text=='J'){
-        crashCym=document.getElementById('crash');
-        crashCym.play();
-    }
-    if(text=='K'){
-        hihat=document.getElementById('hi-hat');
-        hihat.play();
+    for(i=0;i<=8;i++){
+        if(text==letters[i]){
+            let instru=aadio[i];
+            instru.play();
+        }
     }
 }
+
 function mUp(obj){
     let text = obj.innerHTML[0];
     obj.classList.remove("clik");
-    if(text=='A'){
-        floorTom.load();
-    }
-    if(text=='S'){
-        RideCym.load();
-    }
-    if(text=='D'){
-        MidTom.load();
-    }
-    if(text=='F'){
-        base.load();
-    }
-    if(text=='G'){
-        highTom.load();
-    }
-    if(text=='H'){
-        snare.load();
-    }
-    if(text=='J'){
-        crashCym.load();
-    }
-    if(text=='K'){
-        hihat.load();
+    for(i=0;i<8;i++){
+        if(text==letters[i]){
+            let instru=aadio[i];
+            instru.load();
+        }
     }
 }
+
 function kDown(e){
     let key= e.key;
-    if(key=='a'|| key=='A'){
-        allKeys[0].classList.add("clik");
-        floorTom=document.getElementById('floor-tom');
-        floorTom.play();
+    for(j=0;j<=8;j++){
+        if(key==letters[j] || key==smallLetters[j]){
+            allKeys[j].classList.add("clik");
+            let instru=aadio[j];
+            instru.play();   
+        }
     }
-    if(key=='s'|| key=='S'){
-        allKeys[1].classList.add("clik");
-        RideCym=document.getElementById('ride-cymbal');
-        RideCym.play();
-    }
-    if(key=='d'|| key=='D'){
-        allKeys[2].classList.add("clik");
-        MidTom=document.getElementById("mid-tom");
-        MidTom.play();
-    }
-    if(key=='f'|| key=='F'){
-        allKeys[3].classList.add("clik");
-        base=document.getElementById('base');
-        base.play();
-    }
-    if(key=='g'|| key=='G'){
-        allKeys[4].classList.add("clik");
-        highTom=document.getElementById('high-tom');
-        highTom.play();
-    }
-    if(key=='h'|| key=='H'){
-        allKeys[5].classList.add("clik");
-        snare=document.getElementById('snare');
-        snare.play();
-    }
-    if(key=='j'|| key=='J'){
-        allKeys[6].classList.add("clik");
-        crashCym=document.getElementById('crash');
-        crashCym.play();
-    }
-    if(key=='k'|| key=='K'){
-        allKeys[7].classList.add("clik");
-        hihat=document.getElementById('hi-hat');
-        hihat.play();
-    }
-
 }
+
 function kUp(e){
     let key= e.key;
-    if(key=='a'|| key=='A'){
-        allKeys[0].classList.remove("clik");
-        floorTom.load();
-
+    for(j=0;j<=8;j++){
+        if(key==letters[j] || key==smallLetters[j]){
+            allKeys[j].classList.remove("clik");
+            let instru=aadio[j];
+            instru.load();   
+        }
     }
-    if(key=='s'|| key=='S'){
-        allKeys[1].classList.remove("clik");
-        RideCym.load();
-    }
-    if(key=='d'|| key=='D'){
-        allKeys[2].classList.remove("clik");
-        MidTom.load();
-    }
-    if(key=='f'|| key=='F'){
-        allKeys[3].classList.remove("clik");
-        base.load();
-    }
-    if(key=='g'|| key=='G'){
-        allKeys[4].classList.remove("clik");
-        highTom.load();
-    }
-    if(key=='h'|| key=='H'){
-        allKeys[5].classList.remove("clik");
-        snare.load();
-    }
-    if(key=='j'|| key=='J'){
-        allKeys[6].classList.remove("clik");
-        crashCym.load();
-    }
-    if(key=='k'|| key=='K'){
-        allKeys[7].classList.remove("clik");
-        hihat.load();
-    }
-
 }
+
 window.addEventListener('keydown',kDown);
 window.addEventListener('keyup',kUp);
